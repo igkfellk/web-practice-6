@@ -1,0 +1,82 @@
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        /* Gallery styles */
+        .custom-gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .custom-gallery__main-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .custom-gallery__thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        
+        .custom-gallery__thumbnail {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .custom-gallery__thumbnail:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        
+        .custom-gallery__thumbnail.active {
+            border-color: #3498db;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .custom-gallery__thumbnails {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .custom-gallery__main-img {
+                max-height: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .custom-gallery__thumbnails {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .custom-gallery__main-img {
+                max-height: 300px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
